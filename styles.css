@@ -1,0 +1,141 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Custom Cursor */
+body {
+    cursor: url('gun.png'), auto;
+    font-family: Arial, sans-serif;
+    background: black;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Background Blur Effect for Click to Enter State */
+body.blur-background {
+    filter: blur(5px); /* Adjust the blur intensity as needed */
+    transition: filter 0.5s ease; /* Smooth transition for the blur effect */
+}
+
+/* Blurred content box */
+.content {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px); /* Keep the increased blur */
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 600px; /* Increased width for rectangular shape */
+    height: auto; /* Allow height to adjust based on content */
+    transition: transform 0.3s ease;
+}
+
+/* Enter Button */
+#enterPage {
+    text-align: center;
+}
+
+#enterPage button {
+    padding: 15px 30px;
+    font-size: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+#enterPage button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    transform: scale(1.1);
+}
+
+/* Profile Picture (GIF Supported) */
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.1) rotate(10deg);
+}
+
+/* Name */
+.name {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 10px;
+    transition: text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Glow and Pop-Out Effect for Name */
+.name:hover {
+    text-shadow: 0 0 10px white;
+    transform: translateY(-5px);
+}
+
+/* Description */
+.description {
+    color: white;
+    font-size: 16px;
+    margin-bottom: 20px;
+    transition: text-shadow 0.3s ease, transform 0.3s ease;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Description Hover Effect */
+.description:hover {
+    text-shadow: 0 0 10px black;
+    transform: translateY(-5px);
+}
+
+/* Blurred Content Pop-Out Effect */
+.content:hover {
+    transform: scale(1.05);
+}
+
+/* Social Media Links */
+.social-links {
+    display: flex;
+    justify-content: space-around; /* Use space-around for even spacing */
+    padding-top: 20px;
+}
+
+.social-links a {
+    color: black; /* Default black color */
+    text-decoration: none;
+    font-size: 40px; /* Slightly increased icon size */
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.social-links a:hover {
+    text-shadow: 0 0 10px black; /* Black glow */
+    transform: scale(1.3); /* Enlarging effect */
+}
+
+/* Music Toggle Button */
+#musicToggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+#musicToggle:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+    transform: scale(1.1);
+}
