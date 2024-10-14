@@ -19,9 +19,9 @@ function enterSite() {
 
     // Show the main content after a short delay
     setTimeout(() => {
-        content.style.display = "block"; // Show the main content
-        content.style.opacity = "1"; // Change opacity to 1 to fade in
-    }, 500); // Short delay before changing the opacity
+        content.style.display = "block"; 
+        content.style.opacity = "1"; 
+    }, 500);
 }
 
 // Music toggle functionality
@@ -31,18 +31,31 @@ function toggleMusic() {
     const music = document.getElementById("backgroundMusic");
     const toggleButton = document.getElementById("musicToggle");
     if (isMusicPlaying) {
-        music.pause(); // Pause music
-        toggleButton.innerText = "Play Music"; // Change button text
+        music.pause(); 
+        toggleButton.innerText = "Play Music"; 
     } else {
-        music.play(); // Play music
-        toggleButton.innerText = "Pause Music"; // Change button text
+        music.play(); 
+        toggleButton.innerText = "Pause Music"; 
     }
-    isMusicPlaying = !isMusicPlaying; // Toggle state
+    isMusicPlaying = !isMusicPlaying; 
 }
 
 // Function to play hover sound
 function playHoverSound() {
     const hoverSound = document.getElementById("hoverSound");
-    hoverSound.currentTime = 0; // Reset time to allow replay
-    hoverSound.play(); // Play hover sound
+    hoverSound.currentTime = 0;
+    hoverSound.play(); 
 }
+
+// Play hitsound on profile picture or social link click
+document.querySelector('.profile-pic').addEventListener('click', () => {
+    const hitSound = new Audio('hitsound.wav');
+    hitSound.play(); 
+});
+
+document.querySelectorAll('.social-links a').forEach((link) => {
+    link.addEventListener('click', () => {
+        const hitSound = new Audio('hitsound.wav');
+        hitSound.play(); 
+    });
+});
